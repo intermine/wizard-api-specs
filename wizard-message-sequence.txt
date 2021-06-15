@@ -1,7 +1,6 @@
 Visualise using  https://www.websequencediagrams.com/
 =====================================================
 
-
 title New Mine Wizard
 
 Browser->Server: Start new mine config
@@ -10,8 +9,10 @@ Server->Browser: Returns mine config id
 loop repeat if more than one file
 note right of Server: Data "sniffing" & validation
 Browser->+Server: Detect file properties (for n first lines)
-Server->-Browser: Returns suspected file properties and options
-note left of Browser: User tweaks config
+
+Server->Browser: Returns suspected file properties and any questions
+
+note left of Browser: User tweaks config & answers questions
 Browser->Server: Save tweaked configs `saveFileProperties`
 Browser->Server: Save full file
 end
